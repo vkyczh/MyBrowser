@@ -1,0 +1,21 @@
+﻿html {
+}
+body
+{
+}
+
+p {
+    -webkit-animation:t 10s;
+    background-color: #ffff00;
+}
+
+@-webkit-keyframes t
+{
+    from {
+        background-color: blue;
+    }
+
+    to {
+        background-color: #ffff00;
+    }
+}
