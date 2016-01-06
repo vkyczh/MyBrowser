@@ -64,6 +64,12 @@
     <Compile Include="FormNewWeb.Designer.cs">
       <DependentUpon>FormNewWeb.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTemp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTemp.Designer.cs">
+      <DependentUpon>FormTemp.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormWeb.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormNewWeb.resx">
       <DependentUpon>FormNewWeb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTemp.resx">
+      <DependentUpon>FormTemp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormWeb.resx">
       <DependentUpon>FormWeb.cs</DependentUpon>

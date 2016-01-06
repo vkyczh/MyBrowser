@@ -30,10 +30,13 @@
         {
             this.pHead = new System.Windows.Forms.Panel();
             this.pTool = new System.Windows.Forms.Panel();
+            this.btnDrag = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnMove = new System.Windows.Forms.Button();
+            this.btnExecuteScript = new System.Windows.Forms.Button();
             this.pTitle = new System.Windows.Forms.Panel();
             this.pContent = new System.Windows.Forms.Panel();
             this.webKitBrowser1 = new WebKit.WebKitBrowser();
-            this.btnExecuteScript = new System.Windows.Forms.Button();
             this.pHead.SuspendLayout();
             this.pTool.SuspendLayout();
             this.pContent.SuspendLayout();
@@ -51,12 +54,58 @@
             // 
             // pTool
             // 
+            this.pTool.Controls.Add(this.btnDrag);
+            this.pTool.Controls.Add(this.groupBox1);
+            this.pTool.Controls.Add(this.btnMove);
             this.pTool.Controls.Add(this.btnExecuteScript);
             this.pTool.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pTool.Location = new System.Drawing.Point(0, 37);
             this.pTool.Name = "pTool";
             this.pTool.Size = new System.Drawing.Size(677, 63);
             this.pTool.TabIndex = 1;
+            // 
+            // btnDrag
+            // 
+            this.btnDrag.Location = new System.Drawing.Point(545, 22);
+            this.btnDrag.Name = "btnDrag";
+            this.btnDrag.Size = new System.Drawing.Size(75, 23);
+            this.btnDrag.TabIndex = 3;
+            this.btnDrag.Text = "Drag";
+            this.btnDrag.UseVisualStyleBackColor = true;
+            this.btnDrag.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnDrag_DragDrop);
+            this.btnDrag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnDrag_MouseDown);
+            this.btnDrag.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnDrag_MouseMove);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(34, 7);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(131, 50);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.DragDrop += new System.Windows.Forms.DragEventHandler(this.groupBox1_DragDrop);
+            this.groupBox1.DragEnter += new System.Windows.Forms.DragEventHandler(this.groupBox1_DragEnter);
+            // 
+            // btnMove
+            // 
+            this.btnMove.Location = new System.Drawing.Point(421, 22);
+            this.btnMove.Name = "btnMove";
+            this.btnMove.Size = new System.Drawing.Size(75, 23);
+            this.btnMove.TabIndex = 1;
+            this.btnMove.Text = "Move";
+            this.btnMove.UseVisualStyleBackColor = true;
+            this.btnMove.Click += new System.EventHandler(this.btnMove_Click);
+            // 
+            // btnExecuteScript
+            // 
+            this.btnExecuteScript.Location = new System.Drawing.Point(240, 22);
+            this.btnExecuteScript.Name = "btnExecuteScript";
+            this.btnExecuteScript.Size = new System.Drawing.Size(138, 23);
+            this.btnExecuteScript.TabIndex = 0;
+            this.btnExecuteScript.Text = "ExecuteScript";
+            this.btnExecuteScript.UseVisualStyleBackColor = true;
+            this.btnExecuteScript.Click += new System.EventHandler(this.btnExecuteScript_Click);
             // 
             // pTitle
             // 
@@ -89,16 +138,6 @@
             this.webKitBrowser1.Url = null;
             this.webKitBrowser1.Username = null;
             // 
-            // btnExecuteScript
-            // 
-            this.btnExecuteScript.Location = new System.Drawing.Point(240, 22);
-            this.btnExecuteScript.Name = "btnExecuteScript";
-            this.btnExecuteScript.Size = new System.Drawing.Size(138, 23);
-            this.btnExecuteScript.TabIndex = 0;
-            this.btnExecuteScript.Text = "ExecuteScript";
-            this.btnExecuteScript.UseVisualStyleBackColor = true;
-            this.btnExecuteScript.Click += new System.EventHandler(this.btnExecuteScript_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -124,6 +163,9 @@
         private System.Windows.Forms.Panel pContent;
         private WebKit.WebKitBrowser webKitBrowser1;
         private System.Windows.Forms.Button btnExecuteScript;
+        private System.Windows.Forms.Button btnMove;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnDrag;
     }
 }
 

@@ -66,6 +66,39 @@ namespace MyBrowser
             var w = new FormNewWeb(e.WebKitBrowser);
             w.Show();
         }
+
+        private void btnMove_Click(object sender, EventArgs e)
+        {
+            var f = new FormTemp();
+            f.Show();
+            f.Controls.Add(webKitBrowser1);
+            f.FormClosing += (s, ce) => { pContent.Controls.Add(webKitBrowser1); };
+        }
+
+        private void groupBox1_DragDrop(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+
+        private void btnDrag_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnDrag.DoDragDrop(btnDrag, DragDropEffects.Move);
+        }
+
+        private void groupBox1_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+
+        private void btnDrag_DragDrop(object sender, DragEventArgs e)
+        {
+
+        }
+
+        private void btnDrag_MouseMove(object sender, MouseEventArgs e)
+        {
+            
+        }
     }
 
     [ComVisible(true)]
