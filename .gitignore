@@ -1,4 +1,7 @@
-/obj
-obj/
-
 *.pdb
+obj/
+*.Cache
+MyBrowser/obj/Debug/MyBrowser.csproj.FileListAbsolute.txt
+MyBrowser/obj/Debug/MyBrowser.csproj.FileListAbsolute.txt
+*.Cache
+*.suo
