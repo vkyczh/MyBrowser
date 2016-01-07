@@ -154,6 +154,7 @@
     <Content Include="Dependence\pthreadVC2.dll" />
     <Content Include="Dependence\QTMovieWin.dll" />
     <Content Include="Dependence\QuartzCore.dll" />
+    <Content Include="Dependence\readme.txt" />
     <Content Include="Dependence\SQLite3.dll" />
     <Content Include="Dependence\TabStrip.dll" />
     <Content Include="Dependence\VideoToolbox.dll" />
