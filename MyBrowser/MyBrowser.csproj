@@ -105,6 +105,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Dependence\OpenWebKitSharp.dll.config" />
     <None Include="Libs\OpenWebKitSharp.dll.config" />
     <None Include="Libs\OpenWebKitSharp.manifest" />
     <None Include="Properties\Settings.settings">
@@ -118,6 +119,51 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Dependence\ApplePushService.dll" />
+    <Content Include="Dependence\AppleVersions.dll" />
+    <Content Include="Dependence\APSDaemon_main.dll" />
+    <Content Include="Dependence\ASL.dll" />
+    <Content Include="Dependence\AVFoundationCF.dll" />
+    <Content Include="Dependence\CFNetwork.dll" />
+    <Content Include="Dependence\CoreAudioToolbox.dll" />
+    <Content Include="Dependence\CoreFoundation.dll" />
+    <Content Include="Dependence\CoreGraphics.dll" />
+    <Content Include="Dependence\CoreMedia.dll" />
+    <Content Include="Dependence\CoreVideo.dll" />
+    <Content Include="Dependence\Foundation.dll" />
+    <Content Include="Dependence\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="Dependence\icudt46.dll" />
+    <Content Include="Dependence\icuin40.dll" />
+    <Content Include="Dependence\icuuc40.dll" />
+    <Content Include="Dependence\JavaScriptCore.dll" />
+    <Content Include="Dependence\JSCore.dll" />
+    <Content Include="Dependence\libcache.dll" />
+    <Content Include="Dependence\libdispatch.dll" />
+    <Content Include="Dependence\libicuin.dll" />
+    <Content Include="Dependence\libicuuc.dll" />
+    <Content Include="Dependence\libtidy.dll" />
+    <Content Include="Dependence\libxml2.dll" />
+    <Content Include="Dependence\libxslt.dll" />
+    <Content Include="Dependence\MediaToolbox.dll" />
+    <Content Include="Dependence\MyDownloader.App.dll" />
+    <Content Include="Dependence\MyDownloader.Core.dll" />
+    <Content Include="Dependence\MyDownloader.Extension.dll" />
+    <Content Include="Dependence\MyDownloader.Spider.dll" />
+    <Content Include="Dependence\objc.dll" />
+    <Content Include="Dependence\OpenWebKitSharp.dll" />
+    <Content Include="Dependence\pthreadVC2.dll" />
+    <Content Include="Dependence\QTMovieWin.dll" />
+    <Content Include="Dependence\QuartzCore.dll" />
+    <Content Include="Dependence\readme.txt" />
+    <Content Include="Dependence\SQLite3.dll" />
+    <Content Include="Dependence\TabStrip.dll" />
+    <Content Include="Dependence\VideoToolbox.dll" />
+    <Content Include="Dependence\WebKit.dll" />
+    <Content Include="Dependence\WebKit.Interop.dll" />
+    <Content Include="Dependence\WebKitQuartzCoreAdditions.dll" />
+    <Content Include="Dependence\YSCrashDump.dll" />
+    <Content Include="Dependence\YSUtilities.dll" />
+    <Content Include="Dependence\zlib1.dll" />
     <Content Include="Libs\ICSharpCode.SharpZipLib.dll" />
     <Content Include="Libs\JSCore.dll" />
     <Content Include="Libs\MyDownloader.App.dll" />
