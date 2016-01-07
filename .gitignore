@@ -5,3 +5,5 @@ MyBrowser/obj/Debug/MyBrowser.csproj.FileListAbsolute.txt
 MyBrowser/obj/Debug/MyBrowser.csproj.FileListAbsolute.txt
 *.Cache
 *.suo
+obj
+bin
