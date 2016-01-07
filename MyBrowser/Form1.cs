@@ -17,15 +17,35 @@ namespace MyBrowser
     {
         private readonly string _root;
         private readonly MyClass _myClass;
+        private WebKitBrowser webKitBrowser1;
+        private bool _separatePressd;
         public Form1()
         {
             _root = AppDomain.CurrentDomain.BaseDirectory;
             _myClass = new MyClass();
+           
             InitializeComponent();
+            InitWebKitBrowser();
+        }
+
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImport("user32.dll")]
+        public static extern bool SendMessage(IntPtr hwnd, int wMsg, int wParam, int lParam);
+        public const int WM_SYSCOMMAND = 0x0112;
+        public const int SC_MOVE = 0xF010;
+        public const int HTCAPTION = 0x0002;
+
+        private void InitWebKitBrowser()
+        {
+            webKitBrowser1 = new WebKitBrowser();
+            webKitBrowser1.Dock = DockStyle.Fill;
+            pContent.Controls.Add(webKitBrowser1);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            groupBox1.AllowDrop = true;
             AddEvent();
             webKitBrowser1.AllowDownloads = true;
             webKitBrowser1.GetScriptManager.ScriptObject = _myClass;
@@ -69,20 +89,33 @@ namespace MyBrowser
 
         private void btnMove_Click(object sender, EventArgs e)
         {
+            MoveBrowser();
+        }
+
+        private void MoveBrowser()
+        {
             var f = new FormTemp();
             f.Show();
+            f.Left = MousePosition.X-40;
+            f.Top = MousePosition.Y-10;
             f.Controls.Add(webKitBrowser1);
             f.FormClosing += (s, ce) => { pContent.Controls.Add(webKitBrowser1); };
+            ReleaseCapture();
+            SendMessage(f.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTION, 0);
         }
 
         private void groupBox1_DragDrop(object sender, DragEventArgs e)
         {
-            e.Effect = DragDropEffects.Move;
+            var c = e.Data.GetData("System.Windows.Forms.Button") as Control;
+            var p = groupBox1.PointToClient(MousePosition);
+            c.Left = p.X;
+            c.Top = p.Y;
+           groupBox1.Controls.Add(c);
         }
 
-        private void btnDrag_MouseDown(object sender, MouseEventArgs e)
+        private void btnSeparate_MouseDown(object sender, MouseEventArgs e)
         {
-            btnDrag.DoDragDrop(btnDrag, DragDropEffects.Move);
+            _separatePressd = true;
         }
 
         private void groupBox1_DragEnter(object sender, DragEventArgs e)
@@ -90,14 +123,38 @@ namespace MyBrowser
             e.Effect = DragDropEffects.Move;
         }
 
-        private void btnDrag_DragDrop(object sender, DragEventArgs e)
+        private void btnSeparate_MouseUp(object sender, MouseEventArgs e)
         {
-
+            //_dragPressd = false;
         }
 
-        private void btnDrag_MouseMove(object sender, MouseEventArgs e)
+        private void btnSeparate_MouseMove(object sender, MouseEventArgs e)
         {
-            
+            if (_separatePressd)
+            {
+                var cp = btnSeparate.PointToClient(MousePosition);
+                if (cp.Y >= btnSeparate.Height)//鼠标按下移动超出按钮底部
+                {
+                    _separatePressd = false;
+                    MoveBrowser();
+                }
+            }
+        }
+
+        private void btnSeparate_Click(object sender, EventArgs e)
+        {
+            _separatePressd = false;
+        }
+
+        private void button1_MouseDown(object sender, MouseEventArgs e)
+        {
+            button1.DoDragDrop(button1, DragDropEffects.Move);
+        }
+
+   
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

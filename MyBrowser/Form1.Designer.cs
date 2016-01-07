@@ -30,16 +30,15 @@
         {
             this.pHead = new System.Windows.Forms.Panel();
             this.pTool = new System.Windows.Forms.Panel();
-            this.btnDrag = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnSeparate = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnMove = new System.Windows.Forms.Button();
             this.btnExecuteScript = new System.Windows.Forms.Button();
             this.pTitle = new System.Windows.Forms.Panel();
             this.pContent = new System.Windows.Forms.Panel();
-            this.webKitBrowser1 = new WebKit.WebKitBrowser();
             this.pHead.SuspendLayout();
             this.pTool.SuspendLayout();
-            this.pContent.SuspendLayout();
             this.SuspendLayout();
             // 
             // pHead
@@ -54,7 +53,8 @@
             // 
             // pTool
             // 
-            this.pTool.Controls.Add(this.btnDrag);
+            this.pTool.Controls.Add(this.button1);
+            this.pTool.Controls.Add(this.btnSeparate);
             this.pTool.Controls.Add(this.groupBox1);
             this.pTool.Controls.Add(this.btnMove);
             this.pTool.Controls.Add(this.btnExecuteScript);
@@ -64,17 +64,29 @@
             this.pTool.Size = new System.Drawing.Size(677, 63);
             this.pTool.TabIndex = 1;
             // 
-            // btnDrag
+            // button1
             // 
-            this.btnDrag.Location = new System.Drawing.Point(545, 22);
-            this.btnDrag.Name = "btnDrag";
-            this.btnDrag.Size = new System.Drawing.Size(75, 23);
-            this.btnDrag.TabIndex = 3;
-            this.btnDrag.Text = "Drag";
-            this.btnDrag.UseVisualStyleBackColor = true;
-            this.btnDrag.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnDrag_DragDrop);
-            this.btnDrag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnDrag_MouseDown);
-            this.btnDrag.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnDrag_MouseMove);
+            this.button1.Location = new System.Drawing.Point(187, 22);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
+            // 
+            // btnSeparate
+            // 
+            this.btnSeparate.Location = new System.Drawing.Point(545, 22);
+            this.btnSeparate.Name = "btnSeparate";
+            this.btnSeparate.Size = new System.Drawing.Size(75, 23);
+            this.btnSeparate.TabIndex = 3;
+            this.btnSeparate.Text = "Separate";
+            this.btnSeparate.UseVisualStyleBackColor = true;
+            this.btnSeparate.Click += new System.EventHandler(this.btnSeparate_Click);
+            this.btnSeparate.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnSeparate_MouseDown);
+            this.btnSeparate.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnSeparate_MouseMove);
+            this.btnSeparate.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnSeparate_MouseUp);
             // 
             // groupBox1
             // 
@@ -99,7 +111,7 @@
             // 
             // btnExecuteScript
             // 
-            this.btnExecuteScript.Location = new System.Drawing.Point(240, 22);
+            this.btnExecuteScript.Location = new System.Drawing.Point(277, 22);
             this.btnExecuteScript.Name = "btnExecuteScript";
             this.btnExecuteScript.Size = new System.Drawing.Size(138, 23);
             this.btnExecuteScript.TabIndex = 0;
@@ -117,26 +129,11 @@
             // 
             // pContent
             // 
-            this.pContent.Controls.Add(this.webKitBrowser1);
             this.pContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pContent.Location = new System.Drawing.Point(0, 100);
             this.pContent.Name = "pContent";
             this.pContent.Size = new System.Drawing.Size(677, 400);
             this.pContent.TabIndex = 1;
-            // 
-            // webKitBrowser1
-            // 
-            this.webKitBrowser1.AllowDrop = true;
-            this.webKitBrowser1.BackColor = System.Drawing.Color.White;
-            this.webKitBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webKitBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.webKitBrowser1.Name = "webKitBrowser1";
-            this.webKitBrowser1.Password = null;
-            this.webKitBrowser1.PrivateBrowsing = false;
-            this.webKitBrowser1.Size = new System.Drawing.Size(677, 400);
-            this.webKitBrowser1.TabIndex = 0;
-            this.webKitBrowser1.Url = null;
-            this.webKitBrowser1.Username = null;
             // 
             // Form1
             // 
@@ -150,7 +147,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pHead.ResumeLayout(false);
             this.pTool.ResumeLayout(false);
-            this.pContent.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -161,11 +157,11 @@
         private System.Windows.Forms.Panel pTool;
         private System.Windows.Forms.Panel pTitle;
         private System.Windows.Forms.Panel pContent;
-        private WebKit.WebKitBrowser webKitBrowser1;
         private System.Windows.Forms.Button btnExecuteScript;
         private System.Windows.Forms.Button btnMove;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnDrag;
+        private System.Windows.Forms.Button btnSeparate;
+        private System.Windows.Forms.Button button1;
     }
 }
 
