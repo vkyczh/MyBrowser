@@ -16,11 +16,20 @@
             hi();
             // return { Name: "这是一段故事" ,Count: 1000};
         }
+        onerror=function(error, file, row) {
+            alert("error:"+error+"\n"+file+"\nrow:"+row);
+        };
+        function notification() {
+            alert('notification');
+            Notification.requestPermission(function(status) {});
+            var n = new Nottification("消息", {icon:"",body:"通知"});
+        }
     </script>
 </head>
 <body>
 <p>Hello World!</p>
 <input type="button" onclick="hi();" value="Hi"/>
+<input type="button" onclick="notification();" value="Notification"/>
 <input type="button" onclick="alert('Nice to see you!');" value="Alert"/>
 <a href="Test.html">Test</a>
 <a href="Test.html" target="_blank">Test n</a>
