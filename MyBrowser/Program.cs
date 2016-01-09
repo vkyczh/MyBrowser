@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyBrowser.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -13,6 +14,7 @@ namespace MyBrowser
         [STAThread]
         static void Main()
         {
+            SqliteHelper.Init();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
